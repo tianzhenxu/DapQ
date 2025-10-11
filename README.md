@@ -17,49 +17,41 @@ Then install our CUDA implementation:
 cd quant && pip install -e .
 ```
 
-### Example
+## LongBench
 
-Load model
+We support inference code on `LongBench` to repuduce our result.
 
-```python
-# LLaMA model with OTT
-import torch
-import os
-from models.llama_OTT import LlamaForCausalLM_OTT
-from transformers import LlamaConfig, AutoTokenizer
-config = LlamaConfig.from_pretrained("meta-llama/Llama-2-7b-hf")
+Our codebase support Flash Attention v2, Sdpa Attention, etc. The results presented in our paper in based on Flash Attention v2.
 
-config.k_bits = K_BITS # current support 2/4 bit for KV Cache
-config.v_bits = V_BITS # current support 2/4 bit for KV Cache
-config.sink_num=SINK_NUM
-config.sink_max_size=SINK_MAX_SIZE
-config.group_size = GROUP_SIZE
-config.residual_length = RESIDUAL_LENGTH # the number of recent fp16 tokens
-CACHE_DIR = PATH_TO_YOUR_SAVE_DIR
+自行下载LongBench dataset
 
-model = LlamaForCausalLM_OTT.from_pretrained(
-    pretrained_model_name_or_path='meta-llama/Llama-2-7b-hf',
-    config=config,
-    cache_dir=CACHE_DIR,
-    torch_dtype=torch.float16,
-    low_cpu_mem_usage=True,
-    device_map="auto",
-)
+## LongBenchV2
 
-tokenizer = AutoTokenizer.from_pretrained(
-    'meta-llama/Llama-2-7b-hf', 
-    use_fast=False, 
-    trust_remote_code=True, 
-    tokenizer_type='llama')
+We support inference code on `LongBenchV2` to repuduce our result.
 
-# Inference
-# e.g., model.generate(...)
-```
+Our codebase support Flash Attention v2, Sdpa Attention, etc. The results presented in our paper in based on Flash Attention v2.
 
-#### Example
+自行下载LongBenchV2 dataset
 
-We provide an examples to show how to use OTT. You can check [example.py](./example.py):
+## Ruler
 
-```bash
-python example.py --[args] [options] 
-```
+We support inference code on `Ruler` to repuduce our result.
+
+Our codebase support Flash Attention v2, Sdpa Attention, etc. The results presented in our paper in based on Flash Attention v2.
+
+自行下载Ruler dataset
+
+注意：只有qwen3_8B和Meta-Llama-3-8B-Instruct不要使用build chat函数
+
+## Needle in haystack
+
+We support inference code on `Needle in haystack` to repuduce our result.
+
+Our codebase support Flash Attention v2, Sdpa Attention, etc. The results presented in our paper in based on Flash Attention v2.
+
+
+## HELMET
+
+We support inference code on `HELMET` to repuduce our result.
+
+Our codebase support Flash Attention v2, Sdpa Attention, etc. The results presented in our paper in based on Flash Attention v2.
