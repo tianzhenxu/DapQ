@@ -1,21 +1,20 @@
-# Where Matters More Than What: Decoding aligned KV Cache Compression via Position aware Pseudo queries
+# Where Matters More Than What: Decoding_aligned KV Cache Compression via Position_aware Pseudo_queries
 ### Setup
+
+```python
+transformers >= 4.50
+flash-attn >= 2.7.4.post1
+```
 
 To install the required packages:
 
 ```bash
-conda create -n ott python=3.10
-conda activate ott
-pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cu121
+conda create -n DapQ python=3.10
+conda activate DaoQ
+pip install torch==2.6.0 transformers==4.53.0
 pip install --upgrade pip  # enable PEP 660 support
-pip install -e .
 ```
 
-Then install our CUDA implementation:
-
-```bash
-cd quant && pip install -e .
-```
 
 ## LongBench
 
