@@ -1,5 +1,4 @@
-# OTT: Accurate KV Cache Quantization with Outlier Tokens Tracing
-
+# Where Matters More Than What: Decoding aligned KV Cache Compression via Position aware Pseudo queries
 ### Setup
 
 To install the required packages:
