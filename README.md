@@ -49,9 +49,12 @@ We support inference code on `Needle in haystack` to repuduce our result.
 
 Our codebase support Flash Attention v2, Sdpa Attention, etc. The results presented in our paper in based on Flash Attention v2.
 
+自行下载Needle_in_haystack dataset
 
 ## HELMET
 
 We support inference code on `HELMET` to repuduce our result.
 
 Our codebase support Flash Attention v2, Sdpa Attention, etc. The results presented in our paper in based on Flash Attention v2.
+
+自行下载HELMET dataset
